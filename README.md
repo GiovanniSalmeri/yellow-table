@@ -103,6 +103,15 @@ Besides real tables, in the advanced option `Names` you can join virtual `.func`
 
 FixedArguments, if present, are passed to the function before other arguments. Functions can be defined in the file `system/extensions/tablefunctions.php`.
 
+Reading a table from an extension:
+
+```
+$path = $this->yellow->system->get("tableDirectory");
+$myTable = "my-table.csv";
+$tableHandler = $this->yellow->extension->get("table");
+$table = $tableHandler->getTable($path.$myTable);
+```
+
 ## Settings
 
 The following settings can be configured in file `system/settings/system.ini`:
