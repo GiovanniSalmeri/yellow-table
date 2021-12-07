@@ -74,9 +74,9 @@ The values of each row must be as many as the columns.
 
 Embedding a table:
 
-`[table data.csv]`
-`[table data.csv "European countries" filtrable]`
-`[table data.tsv "European countries" "sortable center"]`
+`[table data.csv]`  
+`[table data.csv "European countries" filtrable]`  
+`[table data.tsv "European countries" "sortable center"]`  
 
 For numbers of a column to be aligned at the decimal point `.`, add the `point-aligned` style (or ensure that all of them have the same number of decimals). Four-digit integers (e.g. years) are shown with no thousand separator; in order to force it, add to them a decimal point. Dates are properly sortable if they are in ISO format `YYYY-MM-DD`.
 
