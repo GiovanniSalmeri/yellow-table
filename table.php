@@ -87,7 +87,6 @@ class YellowTable {
     // Create header cell from text
     private function HTMLHeaderCell($page, $text) {
         $text = trim($text);
-        //return "<th scope=\"col\" tabindex=\"0\">".($this->yellow->system->get("tableTextStyling") ? $this->parseText($page, $text) : htmlspecialchars($text))."</th>";
         return "<th scope=\"col\">".($this->yellow->system->get("tableTextStyling") ? $this->parseText($page, $text) : htmlspecialchars($text))."</th>";
     }
 
