@@ -93,8 +93,8 @@ The separator is `,`, unless a different one is specified in a line, put at the 
 
 Embedding a table with some advanced options:
 
-`[table - "Society members" - members2020.csv>members2021.csv "Personal Id" - "Surname"]
-`[table - "Recent students" filtrable students.psv|curricula.csv - "Inscription Year==2021"]
+`[table - "Society members" - members2020.csv>members2021.csv "Personal Id" - "Surname"]`  
+`[table - "Recent students" filtrable students.psv|curricula.csv - "Inscription Year==2021"]`  
 
 Besides real tables, in the advanced option `Names` you can join virtual `.func` tables. They specify calculated columns with this format:
 
