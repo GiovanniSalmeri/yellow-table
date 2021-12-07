@@ -1,0 +1,59 @@
+.content div.table-container {
+    overflow-x: auto;
+}
+.content table {
+    display: table !important;
+}
+.content td.num {
+    text-align: right;
+}
+
+.content table.sortable thead tr th {
+    cursor: pointer;
+    color: #07d;
+}
+.content table.sortable thead tr th::after {
+    content: "\0000A0▴";
+    visibility: hidden;
+}
+.content table.sortable thead tr th[aria-sort="ascending"]::after {
+    content: "\0000A0▴";
+    visibility: visible;
+}
+.content table.sortable thead tr th[aria-sort="descending"]::after {
+    content: "\0000A0▾";
+    visibility: visible;
+}
+
+/* stockholm, berlin, bern, lund */
+.content caption {
+    text-align: left;
+    padding: 0.3em;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+}
+/* paris */
+/* .content caption {
+    text-align: left;
+    padding: 0.3em;
+    border-bottom: 1px solid #bbb;
+    font-weight: bold;
+}
+*/
+/* helsinki */
+/*
+.content caption {
+    font-weight: bold;
+}
+*/
+
+.content input.filter {
+    width: 100%;
+    margin: 0.3em 0 0.3em 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-20 -20 169 169'%3E%3Cpath fill='%23808080' d='M51.6,96.7c11,0,21-3.9,28.8-10.5l35,35c0.8,0.8,1.8,1.2,2.9,1.2s2.1-0.4,2.9-1.2c1.6-1.6,1.6-4.2,0-5.8l-35-35   c6.5-7.8,10.5-17.9,10.5-28.8c0-24.9-20.2-45.1-45.1-45.1C26.8,6.5,6.5,26.8,6.5,51.6C6.5,76.5,26.8,96.7,51.6,96.7z M51.6,14.7 c20.4,0,36.9,16.6,36.9,36.9C88.5,72,72,88.5,51.6,88.5c-20.4,0-36.9-16.6-36.9-36.9C14.7,31.3,31.3,14.7,51.6,14.7z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.content tr[aria-hidden="true"] {
+    display: none;
+}
