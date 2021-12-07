@@ -74,36 +74,32 @@ The values of each row must be as many as the columns.
 
 Embedding a table:
 
-`[table data.csv]`  
-`[table data.csv "European countries" filtrable]`  
-`[table data.tsv "European countries" "sortable center"]`  
+    [table data.csv]
+    [table data.csv "European countries" filtrable]
+    [table data.tsv "European countries" "sortable center"]
 
 For numbers of a column to be aligned at the decimal point `.`, add the `point-aligned` style (or ensure that all of them have the same number of decimals). Four-digit integers (e.g. years) are shown with no thousand separator; in order to force it, add to them a decimal point. Dates are properly sortable if they are in ISO format `YYYY-MM-DD`.
 
 Table file in `.csv` format:
 
-```
-Country, Capital, Population
-Austria, Vienna, 8857960
-Belgium, Brussels, 11449656
-Denmark, Copenhagen, 5806015
-```
+    Country, Capital, Population
+    Austria, Vienna, 8857960
+    Belgium, Brussels, 11449656
+    Denmark, Copenhagen, 5806015
 
 The separator is `,`, unless a different one is specified in a line, put at the beginning of the file before the headers, containing only `sep=` followed by the separator, e.g. `sep=;`, `sep=\t`. A column containing the separator character must be wrapped into quotes `"`. Files in `.tsv` and `.psv` format have tabs and pipes (`|`) as separators respectively, use no quotes, but can escape the separator (as `\t` and `\p` respectively).
 
 Embedding a table with some advanced options:
 
-`[table - "Society members" - members2020.csv>members2021.csv "Personal Id" - "Surname"]`  
-`[table - "Recent students" filtrable students.psv|curricula.csv - "Inscription Year==2021"]`  
+    [table - "Society members" - members2020.csv>members2021.csv "Personal Id" - "Surname"]
+    [table - "Recent students" filtrable students.psv|curricula.csv - "Inscription Year==2021"]
 
 Besides real tables, in the advanced option `Names` you can join virtual `.func` tables. They specify calculated columns with this format:
 
-```
-Function: FunctionName
-FixedArguments: Value1, Value2 ...
-Arguments: InputColumn1, InputColumn2 ...
-Values: Column1, Column2 ...
-```
+    Function: FunctionName
+    FixedArguments: Value1, Value2 ...
+    Arguments: InputColumn1, InputColumn2 ...
+    Values: Column1, Column2 ...
 
 FixedArguments, if present, are passed to the function before other arguments. Functions can be defined in the file `system/extensions/tablefunctions.php`.
 
