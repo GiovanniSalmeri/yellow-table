@@ -54,7 +54,7 @@ class YellowTable {
                 }
             }
 
-            if (!empty($table)) {
+            if (!empty($table)) { // to M.
                 $uid = uniqid();
                 $output .= "<div class=\"table-container\" tabindex=\"0\" role=\"group\"".($caption ? " aria-labelledby=\"caption-".$uid."\"" : "").">\n";
                 $output .= "<table";
@@ -68,13 +68,9 @@ class YellowTable {
                     }
                     $output .= "</caption>\n";
                 }
-                //$output .= "<thead>\n<tr>".implode("", array_map([$this, "HTMLHeaderCell"], $table['columns']))."</tr>\n</thead>\n";
-
                 $output .= "<thead>\n<tr>".implode("", array_map(function ($cell) use ($page) { return $this->HTMLHeaderCell($page, $cell); }, $table['columns']))."</tr>\n</thead>\n";
-
                 $output .= "<tbody>\n";
                 foreach ($table['data'] as $row) {
-                    //$output .= "<tr>".implode("", array_map([$this, "HTMLCell"], $row))."</tr>\n";
                     $output .= "<tr>".implode("", array_map(function ($cell) use ($page) { return $this->HTMLCell($page, $cell); }, $row))."</tr>\n";
                 }
                 $output .= "</tbody>\n</table>\n";
@@ -338,7 +334,6 @@ class YellowTable {
         foreach ($table['data'] as $row) {
             foreach ($conditions as $condition) {
                 if (!isset($condCodes[$condition[1]])) continue;
-                //if ($or xor $condCodes[$condition[1]]['not'] xor ($row[$flippedColumns[$condition[0]]]<=>$condition[2])!==$condCodes[$condition[1]]['cmp']) {
                 if ($or xor $condCodes[$condition[1]]['not'] xor (mb_convert_case($row[$flippedColumns[$condition[0]]], MB_CASE_UPPER)<=>mb_convert_case($condition[2], MB_CASE_UPPER))!==$condCodes[$condition[1]]['cmp']) {
                     if ($or) $filteredRows[] = $row;
                     continue 2;
