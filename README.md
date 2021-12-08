@@ -17,9 +17,9 @@ The following arguments are available, all but the first argument are optional:
 If `Name` is left empty (i.e. `-`), the following advanced arguments are also available, among which the first is mandatory:
 
 `Names` = one file name, or more files to be "merged", concatenated by `>` (e.g. `members2019.csv>members2020.csv`), or to be "joined", concatenated by `|` (e.g. `people.csv|cities.psv`); merging has higher precedence  
-`Unique` = remove rows which have the same value in the column specified, e.g. `"Identification code"`  
+`Unique` = remove duplicate rows, i.e. which have the same value in the column specified, e.g. `"Identification code"`  
 `Filter` = show only the lines which satisfy one or more conditions, e.g. `Country==Italy`; available operators are `<<`, `==`, `>>`, `>=`, `!=`, `>=`; alphabetic comparison are case-insensitive; more conditions can be concatenated with `|`, e.g. `Country==Italy|Date<<2020-10-07`; a leading `|` signals that conditions are to be or'ed (rather than and'ed), e.g. `|Country==Italy|Date<<2020-10-07`  
-`Sort` = sort the table according by one or more columns, e.g. `Surname|Name`; the sorting is case-insensitive  
+`Sort` = sort the table by one or more columns, e.g. `Surname|Name`; the sorting is case-insensitive  
 `Columns` = show only some columns, in a certain order, e.g. `Country|City|Year`  
 
 An option must be wrapped into quotes if a space is present, e.g. `"Name|Surname|Date of birth"`. If you wish to omit an option but specify the following ones, write `-`.
