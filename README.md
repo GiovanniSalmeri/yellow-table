@@ -87,12 +87,10 @@ Embedding a table with some advanced options:
 
 Reading a table from an extension:
 
-```
-$path = $this->yellow->system->get("tableDirectory");
-$myTable = "my-table.csv";
-$tableHandler = $this->yellow->extension->get("table");
-$table = $tableHandler->getTable($path.$myTable);
-```
+    $tableHandler = $this->yellow->extension->get("table");
+    $path = $this->yellow->system->get("tableDirectory");
+    $fileName = "my-table.csv";
+    $table = $tableHandler->getTable($path.$fileName);
 
 Table file in `.csv` format:
 
