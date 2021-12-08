@@ -127,7 +127,7 @@ class YellowTableFunctions {
     public function getFromTable($fileName, $keyColumn) {
         /*
         Return from a table in the TableDirectory the values from the 
-        2nd to the last columns in the row whose 1st column has the 
+        2nd to the last column in the row whose 1st column has the 
         value `$keyColumn`. In this way you can join this table using 
         names other than those written in its header. The bridge 
         `func.` file must be written like this:
