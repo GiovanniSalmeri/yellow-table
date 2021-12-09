@@ -18,7 +18,7 @@ If `Name` is left empty (i.e. `-`), the following advanced arguments are also av
 
 `Names` = one file name, or more files to be "merged", concatenated by `>` (e.g. `members2019.csv>members2020.csv`), or to be "joined", concatenated by `|` (e.g. `people.csv|cities.psv`); merging has higher precedence  
 `Unique` = remove duplicate rows, i.e. which have the same value in the column specified, e.g. `"Identification code"`  
-`Filter` = show only the lines which satisfy one or more conditions, e.g. `Country==Italy`; available operators are `<<`, `==`, `>>`, `>=`, `!=`, `>=`; alphabetic comparison are case-insensitive; more conditions can be concatenated with `|`, e.g. `Country==Italy|Date<<2020-10-07`; a leading `|` signals that conditions are to be or'ed (rather than and'ed), e.g. `|Country==Italy|Date<<2020-10-07`  
+`Filter` = show only the rows which satisfy one or more conditions, e.g. `Country==Italy`; available operators are `<<`, `==`, `>>`, `>=`, `!=`, `>=`; alphabetic comparison are case-insensitive; more conditions can be concatenated with `|`, e.g. `Country==Italy|Date<<2020-10-07`; a leading `|` signals that conditions are to be or'ed (rather than and'ed), e.g. `|Country==Italy|Date<<2020-10-07`  
 `Sort` = sort the table by one or more columns, e.g. `Surname|Name`; the sorting is case-insensitive  
 `Columns` = show only some columns, in a certain order, e.g. `Country|City|Year`  
 
@@ -47,7 +47,7 @@ Return a table which is the result of the merge operation on an array of tables,
 Return a table without duplicate rows, i.e. those whose `$column` is identical (only the last one is kept)
 
 `filterTable($table, $conditions, $or = false)`  
-Return a table with only the lines which match the conditions; conditions are in the format `[[$columnName1, "OP", $value1], [$columnName2, "OP", $value2], ...]`, where OP is one of `<<`, `==`, `>>`, `>=`, `!=`, `>=`; set `$or` to `true` for the conditions to be or'ed rather than and'ed
+Return a table with only the rows which match the conditions; conditions are in the format `[[$columnName1, "OP", $value1], [$columnName2, "OP", $value2], ...]`, where OP is one of `<<`, `==`, `>>`, `>=`, `!=`, `>=`; set `$or` to `true` for the conditions to be or'ed rather than and'ed
 
 `sortTable($table, $columns)`  
 Sort a table according to the columns specified, in ascending order
