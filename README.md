@@ -123,6 +123,8 @@ If you want to add a new `fancy` heading style, write a `table-fancy.css`  file 
 
 [Download extension](https://github.com/GiovanniSalmeri/yellow-table/archive/master.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
 
+This extension requires PHP >= 7.0.
+
 ## Developer
 
 Giovanni Salmeri. [Get help](https://github.com/GiovanniSalmeri/yellow-table/issues).
