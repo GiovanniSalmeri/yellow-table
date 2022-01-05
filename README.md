@@ -117,7 +117,7 @@ The following settings can be configured in file `system/settings/system.ini`:
 `TableDirectory` (default = `media/tables/`) = base directory for tables  
 `TableHeadingStyle` (default = `plain`) = heading style for sortable tables (you can choose between `plain` and `link`)    
 
-If you want to add a new `fancy` heading style, write a `table-fancy.css`  file and put into the `system/extensions` folder (since Yellow's themes do not provide a `caption` declaration, you may want to adjust it in order to blend it with your theme). Do not modify the standard styles, since they will be overwritten in case of update of the extension.
+If you want to add a new `fancy` heading style, write a `table-fancy.css`  file and put into the `system/extensions` folder (since Yellow's themes do not provide a `caption` declaration, you may want to adjust it in order to blend it with your theme).
 
 ## Installation
 
