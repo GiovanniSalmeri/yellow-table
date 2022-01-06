@@ -1,3 +1,5 @@
+/* Table extension, https://github.com/GiovanniSalmeri/yellow-table */
+
 .content div.table-container {
     overflow-x: auto;
 }

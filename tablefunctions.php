@@ -1,5 +1,5 @@
 <?php
-// YellowTableFunctions class, https://github.com/GiovanniSalmeri/yellow-table
+// Table extension, https://github.com/GiovanniSalmeri/yellow-table
 
 class YellowTableFunctions {
 

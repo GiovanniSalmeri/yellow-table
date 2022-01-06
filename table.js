@@ -1,3 +1,5 @@
+// Table extension, https://github.com/GiovanniSalmeri/yellow-table
+
 "use strict";
 document.addEventListener("DOMContentLoaded", function() {
 
