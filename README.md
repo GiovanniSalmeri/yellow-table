@@ -2,7 +2,7 @@ Table 0.8.18
 ============
 Simple flat-file database management.
 
-<p align="center"><img src="table-screenshot.png?raw=true" width="795" height="836" alt="Screenshot"></p>
+<p align="center"><img src="table-screenshot.png?raw=true" alt="Screenshot"></p>
 
 ## How to use Table
 
