@@ -121,7 +121,7 @@ If you want to add a new `fancy` heading style, write a `table-fancy.css`  file 
 
 ## Installation
 
-[Download extension](https://github.com/GiovanniSalmeri/yellow-table/archive/master.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
+[Download extension](https://github.com/GiovanniSalmeri/yellow-table/archive/main.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
 
 ## Developer
 
