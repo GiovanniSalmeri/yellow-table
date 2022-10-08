@@ -125,4 +125,4 @@ If you want to add a new `fancy` heading style, write a `table-fancy.css`  file 
 
 ## Developer
 
-Giovanni Salmeri. [Get help](https://github.com/GiovanniSalmeri/yellow-table/issues).
+Giovanni Salmeri. [Get help](https://datenstrom.se/yellow/help/)
