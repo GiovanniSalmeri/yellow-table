@@ -4,6 +4,10 @@ Simple flat-file database management.
 
 <p align="center"><img src="table-screenshot.png?raw=true" alt="Screenshot"></p>
 
+## How to install an extension
+
+[Download ZIP file](https://github.com/GiovanniSalmeri/yellow-table/archive/main.zip) and copy it into your `system/extensions` folder. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
+
 ## How to use Table
 
 Create a [table] shortcut.
@@ -70,7 +74,7 @@ Return a table with only the columns and in the order specified
 
 The values of each row must be as many as the columns.
 
-## Example
+## Examples
 
 Showing a table:
 
@@ -119,10 +123,6 @@ The following settings can be configured in file `system/settings/system.ini`:
 
 If you want to add a new `fancy` heading style, write a `table-fancy.css`  file and put into the `system/extensions` folder (since Yellow's themes do not provide a `caption` declaration, you may want to adjust it in order to blend it with your theme).
 
-## Installation
-
-[Download extension](https://github.com/GiovanniSalmeri/yellow-table/archive/main.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
-
 ## Developer
 
-Giovanni Salmeri. [Get help](https://datenstrom.se/yellow/help/)
+Giovanni Salmeri. [Get help](https://datenstrom.se/yellow/help/).
