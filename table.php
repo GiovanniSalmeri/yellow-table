@@ -20,9 +20,9 @@ class YellowTable {
             list($file, $caption, $style, $files, $unique, $filter, $sort, $arrange) = $this->yellow->toolbox->getTextArguments($text);
             $filtrable = in_array("filtrable", explode(" ", $style));
             $path = $this->yellow->system->get("tableDirectory");
-            if (!empty($file)) {
+            if (!is_string_empty($file)) {
                 $table = $this->getTable($path.trim($file));
-            } elseif (!empty($files)) {
+            } elseif (!is_string_empty($files)) {
                 $table = $this->joinTables(array_map(
                     function($toJoin) use ($path) {
                         return $this->mergeTables(array_map(
@@ -32,10 +32,10 @@ class YellowTable {
                         ); 
                     }, explode("|", $files))
                 );
-                if (!empty($unique)) {
+                if (!is_string_empty($unique)) {
                     $table = $this->simplifyTable($table, $unique);
                 }
-                if (!empty($filter)) {
+                if (!is_string_empty($filter)) {
                     if ($or = ($filter[0]=="|")) $filter = substr($filter, 1);
                     $filters = array_map(
                         function($i) { 
@@ -44,22 +44,22 @@ class YellowTable {
                     );
                     $table = $this->filterTable($table, $filters, $or);
                 }
-                if (!empty($sort)) {
+                if (!is_string_empty($sort)) {
                     $columns = array_map("trim", explode("|", $sort));
                     $table = $this->sortTable($table, $columns);
                 }
-                if (!empty($arrange)) {
+                if (!is_string_empty($arrange)) {
                     $columns = array_map("trim", explode("|", $arrange));
                     $table = $this->arrangeTable($table, $columns);
                 }
             }
 
-            if (!empty($table)) { // to M.
+            if ($table!==false) { // to M.
                 $uid = uniqid();
                 $output .= "<div class=\"table-container\" tabindex=\"0\" role=\"group\"".($caption ? " aria-labelledby=\"caption-".$uid."\"" : "").">\n";
                 $output .= "<table";
                 if ($filtrable) $output .= " id=\"".$uid."\"";
-                if (!empty($style)) $output .= " class=\"".htmlspecialchars($style)."\"";
+                if (!is_string_empty($style)) $output .= " class=\"".htmlspecialchars($style)."\"";
                 $output .= ">\n";
                 if ($caption || $filtrable) {
                     $output .= "<caption id=\"caption-".$uid."\">".htmlspecialchars($caption);
@@ -171,6 +171,7 @@ class YellowTable {
 
     // Put table
     public function putTable($fileName, $table) {
+        if ($table===false) return false;
         $fileType = $this->yellow->toolbox->getFileType($fileName);
         if ($fileHandle = @fopen($fileName, "w")) {
             if(flock($fileHandle, LOCK_EX)) {
@@ -231,6 +232,7 @@ class YellowTable {
     // Join tables
     public function joinTables($tables) {
         $tables = array_filter($tables);
+        if (count($tables)==0) return false;
         if (count($tables)==1) return $tables[0]; // speed up
         $master = array_shift($tables);
         foreach ($tables as $table) {
@@ -280,6 +282,8 @@ class YellowTable {
 
     // Merge tables (also with different columns)
     public function mergeTables($tables) {
+        $tables = array_filter($tables);
+        if (count($tables)==0) return false;
         if (count($tables)==1) return $tables[0]; // speed up and avoid munging a .func file
         $totalColumns = $this->array_union(...array_map(function($i) { return $i['columns']; }, $tables));
         $flippedColumns = array_flip($totalColumns);
@@ -303,6 +307,7 @@ class YellowTable {
 
     // Delete duplicates
     public function simplifyTable($table, $column) {
+        if ($table===false) return false;
         $columnNumber = array_search($column, $table['columns']);
         if ($columnNumber!==false) {
             $existingKeys = [];
@@ -320,6 +325,7 @@ class YellowTable {
 
     // Filter table (condition[0] column, condition[1] see below, condition[2] value)
     public function filterTable($table, $conditions, $or = false) {
+        if ($table===false) return false;
         $conditions = array_filter($conditions);
         $condCodes = [
             "<<"=>[ 'cmp'=>-1, 'not'=>false ],
@@ -346,6 +352,7 @@ class YellowTable {
 
     // Sort table
     public function sortTable($table, $sortingColumns) {
+        if ($table===false) return false;
         $sortingColumns = array_intersect($sortingColumns, $table['columns']);
         if ($sortingColumns) {
             $flippedColumns = array_flip($table['columns']);
@@ -368,6 +375,7 @@ class YellowTable {
 
     // Reduce or reorder columns of table
     public function arrangeTable($table, $columns) {
+        if ($table===false) return false;
         $columns = array_intersect($columns, $table['columns']);
         $flippedColumns = array_flip($table['columns']);
         $columnIndexes = array_map(function($column) use ($flippedColumns) { return $flippedColumns[$column]; }, $columns);
