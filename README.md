@@ -18,6 +18,8 @@ The following arguments are available, all but the first argument are optional:
 `Caption` = caption of the table  
 `Style` = table style, e.g. `left`, `center`, `right`; the special styles `sortable`, `filtrable` and `point-aligned` add the respective function to the table  
 
+The `media/tables` folder is the place to store your tables. You can also create additional folders and organise files as you like.
+
 If `Name` is left empty (i.e. `-`), the following advanced arguments are also available, among which the first is mandatory:
 
 `Names` = one file name, or more files to be "merged", concatenated by `>` (e.g. `members2019.csv>members2020.csv`), or to be "joined", concatenated by `|` (e.g. `people.csv|cities.psv`); merging has higher precedence  
