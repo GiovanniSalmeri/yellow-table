@@ -8,7 +8,7 @@ Simple flat-file database management.
 
 [Download ZIP file](https://github.com/GiovanniSalmeri/yellow-table/archive/main.zip) and copy it into your `system/extensions` folder. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
 
-## How to use Table
+## How to show a table
 
 Create a [table] shortcut.
 
@@ -20,8 +20,13 @@ The following arguments are available, all but the first argument are optional:
 
 The `media/tables` folder is the place to store your tables. You can also create additional folders and organise files as you like.
 
-If `Name` is left empty (i.e. `-`), the following advanced arguments are also available, among which the first is mandatory:
+## How to show a table with advanced options
 
+Create a [table] shortcut.
+
+The following arguments are available, all but the first two arguments are optional:
+
+`Name` = `-`  
 `Names` = one file name, or more files to be "merged", concatenated by `>` (e.g. `members2019.csv>members2020.csv`), or to be "joined", concatenated by `|` (e.g. `people.csv|cities.psv`); merging has higher precedence  
 `Unique` = remove duplicate rows, i.e. which have the same value in the column specified, e.g. `"Identification code"`  
 `Filter` = show only the rows which satisfy one or more conditions, e.g. `Country==Italy`; available operators are `<<`, `==`, `>>`, `>=`, `!=`, `>=`; alphabetic comparison are case-insensitive; more conditions can be concatenated with `|`, e.g. `Country==Italy|Date<<2020-10-07`; a leading `|` signals that conditions are to be or'ed (rather than and'ed), e.g. `|Country==Italy|Date<<2020-10-07`  
@@ -114,14 +119,14 @@ Besides real tables, you can join virtual `.func` tables. They specify calculate
     Arguments: InputColumn1, InputColumn2 ...
     Values: Column1, Column2 ...
 
-FixedArguments, if present, are passed to the function before other arguments. Functions can be defined in the file `system/extensions/tablefunctions.php`.
+`FixedArguments`, if present, are passed to the function before other arguments. Functions can be defined in the file `system/extensions/tablefunctions.php`.
 
 ## Settings
 
 The following settings can be configured in file `system/settings/system.ini`:
 
 `TableDirectory` (default = `media/tables/`) = base directory for tables  
-`TableHeadingStyle` (default = `plain`) = heading style for sortable tables (you can choose between `plain` and `link`)    
+`TableHeadingStyle` (default = `plain`) = heading style for sortable tables, `plain` or `link`  
 
 If you want to add a new `fancy` heading style, write a `table-fancy.css`  file and put into the `system/extensions` folder (since Yellow's themes do not provide a `caption` declaration, you may want to adjust it in order to blend it with your theme).
 
