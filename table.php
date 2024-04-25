@@ -2,7 +2,7 @@
 // Table extension, https://github.com/GiovanniSalmeri/yellow-table
 
 class YellowTable {
-    const VERSION = "0.8.18";
+    const VERSION = "0.9.1";
     public $yellow;         //access to API
 
     // Handle initialisation
@@ -14,7 +14,7 @@ class YellowTable {
     }
 
     // Handle page content of shortcut
-    public function onParseContentShortcut($page, $name, $text, $type) {
+    public function onParseContentElement($page, $name, $text, $attributes, $type) {
         $output = null;
         if ($name=="table" && ($type=="block" || $type=="inline")) {
             list($file, $caption, $style, $files, $unique, $filter, $sort, $arrange) = $this->yellow->toolbox->getTextArguments($text);
@@ -426,10 +426,10 @@ class YellowTable {
     public function onParsePageExtra($page, $name) {
         $output = null;
         if ($name=="header") {
-            $extensionLocation = $this->yellow->system->get("coreServerBase").$this->yellow->system->get("coreExtensionLocation");
+            $assetLocation = $this->yellow->system->get("coreServerBase").$this->yellow->system->get("coreAssetLocation");
             $style = $this->yellow->system->get("tableHeadingStyle");
-            $output .= "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$extensionLocation}table-{$style}.css\" />\n";
-            $output .= "<script type=\"text/javascript\" defer=\"defer\" src=\"{$extensionLocation}table.js\"></script>\n";
+            $output .= "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$assetLocation}table-{$style}.css\" />\n";
+            $output .= "<script type=\"text/javascript\" defer=\"defer\" src=\"{$assetLocation}table.js\"></script>\n";
         }
         return $output;
     }

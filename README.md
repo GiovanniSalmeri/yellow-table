@@ -1,5 +1,5 @@
-Table 0.8.18
-============
+# Table 0.9.1
+
 Simple flat-file database management.
 
 <p align="center"><img src="SCREENSHOT.png" alt="Screenshot"></p>

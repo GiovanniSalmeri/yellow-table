@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    /// sorttable
+    /// sortable
 
     function tableSort(header) {
         var table = header.closest("table");
