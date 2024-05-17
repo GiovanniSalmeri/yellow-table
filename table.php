@@ -13,7 +13,7 @@ class YellowTable {
         $this->yellow->system->setDefault("tableTextStyling", "1");
     }
 
-    // Handle page content of shortcut
+    // Handle page content element
     public function onParseContentElement($page, $name, $text, $attributes, $type) {
         $output = null;
         if ($name=="table" && ($type=="block" || $type=="inline")) {
