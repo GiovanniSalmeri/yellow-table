@@ -116,7 +116,7 @@ class YellowTable {
             $this->skipBOM($fileHandle);
             $rows = [];
             if ($fileType=="csv") {
-                $options = [ ",", "\"" ];
+                $options = [ ",", "\"", "\\" ];
                 $filePosition = ftell($fileHandle);
                 if (($line = fgets($fileHandle))!==false) { // Check for Excel-style metadata
                     $line = stripcslashes(trim($line));
@@ -177,7 +177,7 @@ class YellowTable {
             if(flock($fileHandle, LOCK_EX)) {
                 array_unshift($table['data'], $table['columns']);
                 if ($fileType=="csv") {
-                    $options = [ ",", "\"" ];
+                    $options = [ ",", "\"", "\\" ];
                     foreach ($table['data'] as $row) {
                         fputcsv($fileHandle, $row, ...$options);
                     }
