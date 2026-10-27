@@ -2,7 +2,7 @@
 // Table extension, https://github.com/GiovanniSalmeri/yellow-table
 
 class YellowTable {
-    const VERSION = "0.9.1";
+    const VERSION = "1.0.0";
     public $yellow;         //access to API
 
     // Handle initialisation
@@ -54,7 +54,7 @@ class YellowTable {
                 }
             }
 
-            if ($table!==false) { // to M.
+            if ($table!==false) {
                 $uid = uniqid();
                 $output .= "<div class=\"table-container\" tabindex=\"0\" role=\"group\"".($caption ? " aria-labelledby=\"caption-".$uid."\"" : "").">\n";
                 $output .= "<table";
@@ -428,8 +428,8 @@ class YellowTable {
         if ($name=="header") {
             $assetLocation = $this->yellow->system->get("coreServerBase").$this->yellow->system->get("coreAssetLocation");
             $style = $this->yellow->system->get("tableHeadingStyle");
-            $output .= "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$assetLocation}table-{$style}.css\" />\n";
-            $output .= "<script type=\"text/javascript\" defer=\"defer\" src=\"{$assetLocation}table.js\"></script>\n";
+            $output .= "<link rel=\"stylesheet\" media=\"all\" href=\"{$assetLocation}table-{$style}.css\" />\n";
+            $output .= "<script defer=\"defer\" src=\"{$assetLocation}table.js\"></script>\n";
         }
         return $output;
     }

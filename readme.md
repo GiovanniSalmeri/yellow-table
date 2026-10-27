@@ -1,8 +1,8 @@
-# Table 0.9.1
+# Table 1.0.0
 
-Simple flat-file database management.
+Simple flat-file database management. Developed by Giovanni Salmeri.
 
-<p align="center"><img src="SCREENSHOT.png" alt="Screenshot"></p>
+<p align="center"><img src="screenshot.png" alt="Screenshot"></p>
 
 ## How to install an extension
 
@@ -130,6 +130,4 @@ The following settings can be configured in file `system/settings/system.ini`:
 
 If you want to add a new `fancy` heading style, write a `table-fancy.css`  file and put into the `system/extensions` folder (since Yellow's themes do not provide a `caption` declaration, you may want to adjust it in order to blend it with your theme).
 
-## Developer
-
-Giovanni Salmeri. [Get help](https://datenstrom.se/yellow/help/).
+Do you have questions? [Get help](https://datenstrom.se/yellow/help/).
